@@ -2,12 +2,14 @@ import React,{useState,useEffect,useContext} from 'react'
 import { connect } from 'react-redux';
 import axios from 'axios'
 import PropTypes from 'prop-types'; 
+// import { createClient }  from 'redis';
 import { FcBarChart } from "react-icons/fc";
 import StockContext from './context/StockContext'
 function Overview({auth:{user}}) {
   const{stockSymbol}=useContext(StockContext)
   const [stockDetails,setStockDetails]=useState({});
 const [quote,setQuote]=useState([]);
+
 useEffect(()=>{
     const fetchData= async()=>{
       const kkeeyy="SB9I4MIXG3D7OISQ";

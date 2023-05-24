@@ -46,11 +46,11 @@ function Watchlist({isAuthenticated,logout,auth: { user }}) {
       
     </div>):(
       <div>
-      <div className="text-center">
+      <div className="bg-gray-100 text-center">
       Watchlist
       
        </div>
-       <div className="mx-2">
+       <div className="text-center mx-2">
        Login to see you watchlist
        <br></br>
        <SignUp/>   <Login/>

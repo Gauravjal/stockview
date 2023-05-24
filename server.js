@@ -4,7 +4,8 @@ const fs = require('fs')
 const path = require('path')
 
 var cors = require('cors')
-
+var dotenv =require('dotenv');
+dotenv.config();
 
 
 var bodyParser = require('body-parser')
@@ -20,6 +21,15 @@ const notFoundMiddleware=require('./middleware/not-found.js');
 connectDB();
 //set port to 5000
 const PORT=process.env.PORT || 5000;
+// Serve static assets in production
+if (process.env.NODE_ENV === 'production') {
+  // Set static folder
+  app.use(express.static('client/build'));
+
+  app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+  });
+}
 
 //use body parser middleware
 app.use(express.json({extended:false}));
@@ -481,9 +491,6 @@ app.get('/',(req,res)=>res.send('API running'))
 app.use('/api/users',require('./routes/api/users'))
 app.use('/api/auth',require('./routes/api/auth'))
 app.use('/api/profile',require('./routes/api/profile'))
-
-app.use('/api/job',require('./routes/api/job'))
-app.use('/api/proposal',require('./routes/api/proposal'))
 
 //Listen to port 5000
 app.listen(PORT,()=>console.log(`Server has start at port ${PORT}`))
