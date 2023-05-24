@@ -1,14 +1,14 @@
 const mongoose=require('mongoose')
 const config=require('config')
 //get mongoDB sever url
-const db=config.get('mongoUrl')
+// const db=config.get('mongoUrl')
 
 const connectDB=async ()=>{
     try{
         //set strict query false to suppress the warning
         mongoose.set("strictQuery", false);
         //asyncronous method to connect to database
-        await mongoose.connect(db,{
+        await mongoose.connect(process.env.mongoUrl,{
             //use this if you create lot of connections and don't want to copy/paste
             useNewUrlParser:true
         });

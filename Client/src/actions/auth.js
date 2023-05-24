@@ -78,7 +78,6 @@ export const login=(
             'Content-Type':'application/json'
         }
     }
-    alert("fuck");
     const body=JSON.stringify({email,password});
     try{
         console.log(body);
