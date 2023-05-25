@@ -20,7 +20,7 @@ const notFoundMiddleware=require('./middleware/not-found.js');
 //Connect to database
 connectDB();
 //set port to 5000
-const PORT=process.env.PORT || 5000;
+const PORT=5000;
 // Serve static assets in production
 if (process.env.NODE_ENV === 'production') {
   // Set static folder
