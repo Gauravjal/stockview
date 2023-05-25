@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "server": "nodemon server --ignore Client",
-    "client": "cd ./Client && npm start",
+    "Client": "cd ./Client && npm start",
     "dev": "concurrently \"npm run server\" \"npm run Client\"",
     "setup-production": "NPM_CONFIG_PRODUCTION=false npm install --prefix Client && npm run build --prefix Client"
   },
