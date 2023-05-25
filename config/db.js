@@ -14,7 +14,8 @@ const connectDB=async ()=>{
         });
 
         //Display message for confirmation of database connection
-        console.log('Connected to database')
+        console.log('Connected to database',process.env.mongoUrl);
+        console.log('Connected to database',process.env.jwtSecret);
     }
     catch(err)
     {
