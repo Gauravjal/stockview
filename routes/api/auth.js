@@ -58,7 +58,7 @@ router.post(
           id: user.id
         }
       };
-
+      console.log("jwt",process.env.jwtSecret);
       jwt.sign(
         payload,
         process.env.jwtSecret,
