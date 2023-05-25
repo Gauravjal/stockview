@@ -4,6 +4,7 @@ import { FcSearch} from 'react-icons/fc';
 import {connect} from 'react-redux';
 import { MdClear} from 'react-icons/md';
 import {MdLogout} from 'react-icons/md'
+import {FaSearch} from 'react-icons/fa'
 import DisplayBestMatches from './DisplayBestMatches.jsx';
 import {logout} from '../actions/auth.js'
 import { searchSymbol } from '../API/stockAPI.js';
@@ -48,26 +49,29 @@ function Search({isAuthenticated,logout,auth: { user }}) {
 
   return (
     <div className="w-screen place-content-center relative flex justify-center px-10 py-10">
+      
         <div className="relative mx-auto">
         <input
   type="text"
   value={input}
-  className="shadow bg-blue-100 appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+  style={{ borderRadius: '5px 0 0 5px', border: '3px solid #76d18f' }}
+  className="shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
   placeholder="Search stock..."
   onChange={(event) => setInput(event.target.value)}
   onKeyPress={(event) => {
-    if (event.key === "Enter") {
+    if (event.key === 'Enter') {
       updateBestMatches();
     }
   }}
 />
+
   {input && (
     <button
-      className="absolute top-3 right-3 bg-blue-100 px-1"
+      className="absolute top-3 right-3 px-1"
       style={{ top: "50%", transform: "translateY(-50%)", right: "8px" }}
       onClick={clear}
     >
-      <MdClear />
+      <MdClear style={{color:'#76d18f'}}/>
     </button>
   )}
   <button
@@ -75,19 +79,18 @@ function Search({isAuthenticated,logout,auth: { user }}) {
     style={{
       top: "50%",
       transform: "translateY(-50%)",
-      right: "36px",
-      backgroundColor: "#e1e1e1",
+      right: "36px"
     }}
     onClick={updateBestMatches}
   >
-    <FcSearch className="fill-current" />
+    <FaSearch style={{color:'#76d18f'}} className="fill-current" />
   </button>
 {input && bestMatches.length>0 ? <DisplayBestMatches bestMatches={bestMatches} setBestMatches={setBestMatches} />:null}
 </div>
 
         
 {isAuthenticated && (
-        <button className="btn btn-sm rounded-md shadow ml-auto" onClick={logout}>
+        <button style={{color:'#76d18f'}} className="btn btn-sm rounded-md shadow ml-auto" onClick={logout}>
               <MdLogout/>
               </button>)
 }

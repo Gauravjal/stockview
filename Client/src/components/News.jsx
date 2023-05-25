@@ -39,16 +39,16 @@ function News() {
     <>
     {quote && quote.length>=1 ? (
       <>
-        <div className="grid grid-cols-3 rounded-md relative p-8 border-2 border-neutral-200">
+        <div className="grid grid-cols-3 rounded-md relative border-2 border-neutral-200">
   {quote.map((item, index) => (
-    <div className="rounded-md" key={index}>
+    <div style={{borderRight:'1px solid #76d18f'}} className="px-1" key={index}>
       <img 
         src={item.banner_image} 
         alt="banner"
         className="w-full h-40 object-cover"
       ></img>
       <a
-        className="text-blue-500 hover:text-red-200" 
+        className="py-2 text-blue-500 hover:text-red-200" 
         href={item.url}
       >
         {item.title}

@@ -99,16 +99,16 @@ function Chart() {
 
     
   return (
-    <div  id="chart">
+    <div className="border"  id="chart">
       { data ? (
         <>
       <div className="flex md:gap-2 xl:gap-2 gap-1 justify-end">
-      <button className="bg-slate-400 px-2 hover:bg-green-300" onClick={()=>{setInterval(7)}}>1W</button>
-      <button className="bg-slate-400 px-2  hover:bg-green-300" onClick={()=>{setInterval(30)}}>1M</button>
-      <button className="bg-slate-400 px-2  hover:bg-green-300" onClick={()=>{setInterval(3*30)}}>3M</button>
-      <button className="bg-slate-400 px-2  hover:bg-green-300" onClick={()=>{setInterval(6*30)}}>6M</button>
-      <button className="bg-slate-400 px-2  hover:bg-green-300" onClick={()=>{setInterval(365)}}>1Y</button>
-      <button className="bg-slate-400 px-2  hover:bg-green-300" onClick={()=>{setInterval(3*365)}}>3Y</button>
+      <button style={{ color: interval===7 ? '#76d18f' : '' }} className="bg-blue-100 px-2 hover:bg-green-300" onClick={()=>{setInterval(7)}}>1W</button>
+      <button style={{ color: interval===30 ? '#76d18f' : '' }} className="bg-blue-100 px-2  hover:bg-green-300" onClick={()=>{setInterval(30)}}>1M</button>
+      <button style={{ color: interval===90 ? '#76d18f' : '' }} className="bg-blue-100 px-2  hover:bg-green-300" onClick={()=>{setInterval(3*30)}}>3M</button>
+      <button style={{ color: interval===180 ? '#76d18f' : '' }} className="bg-blue-100 px-2  hover:bg-green-300" onClick={()=>{setInterval(6*30)}}>6M</button>
+      <button style={{ color: interval===365 ? '#76d18f' : '' }} className="bg-blue-100 px-2  hover:bg-green-300" onClick={()=>{setInterval(365)}}>1Y</button>
+      <button style={{ color: interval===1095 ? '#76d18f' : '' }} className="bg-blue-100 px-2  hover:bg-green-300" onClick={()=>{setInterval(3*365)}}>3Y</button>
       </div>
  
   <ReactApexChart options={temp.options} series={data} type="candlestick" height={450} />

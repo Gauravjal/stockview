@@ -18,8 +18,8 @@ function Watchlist({isAuthenticated,logout,auth: { user }}) {
                 
   return (
     <>
-    {isAuthenticated ?(<div className="absolute border-2 rounded-md overflow-y-scroll w-1/5 h-screen g-white border-neutral-200 custom-scrollbar z-50 bg-indigo-100">
-      <div className="text-center text-xl bg-blue-300 py-2">
+    {isAuthenticated ?(<div className=" border-2 rounded-md overflow-y-scroll h-screen  border-neutral-200 custom-scrollbar z-50 bg-indigo-100">
+      <div style={{backgroundColor:'#76d18f'}} className="text-center  text-xl py-2">
       Watchlist
        </div>
       {user && user.stocks.length===0 && !user.stocks ? (
