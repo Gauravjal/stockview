@@ -2,7 +2,7 @@
 const express=require('express')
 const fs = require('fs')
 const path = require('path')
-
+//changed casing of client
 var cors = require('cors')
 var dotenv =require('dotenv');
 dotenv.config();
