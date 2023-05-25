@@ -4,10 +4,10 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "server": "nodemon server --ignore Client",
+    "server": "node server --ignore Client",
     "Client": "cd ./Client && npm start",
     "dev": "concurrently \"npm run server\" \"npm run Client\"",
-    "setup-production": "NPM_CONFIG_PRODUCTION=false npm install --prefix Client && npm run build --prefix Client"
+    "setup-production": "NPM_CONFIG_PRODUCTION=false npm install && npm install --prefix Client && npm run build --prefix Client"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
