@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import Watchlist from './Watchlist';
-import {VscThreeBars} from 'react-icons/vsc';
+import React, { useState } from "react";
+import Watchlist from "./Watchlist";
+import { VscThreeBars } from "react-icons/vsc";
 function SideBar() {
   const [sidebarVisible, setSidebarVisible] = useState(false);
 
@@ -12,13 +12,11 @@ function SideBar() {
     <div className="flex z-50">
       {/* Sidebar */}
       <div
-        className={`bg-gray-200 w-64 h-screen fixed top-0 left-0 transform transition-transform duration-300 ease-in-out ${
-          sidebarVisible ? 'translate-x-0' : '-translate-x-full'
+        className={`bg-white border-r-4 w-64 h-screen fixed top-0 left-0 transform transition-transform duration-300 ease-in-out ${
+          sidebarVisible ? "translate-x-0" : "-translate-x-full"
         }`}
       >
-        
-            <Watchlist/>
-            
+        <Watchlist />
       </div>
 
       {/* Main Content */}
@@ -28,11 +26,11 @@ function SideBar() {
       </div>
 
       <button
-      style={{color:'#76d18f'}}
+        style={{ color: "#76d18f" }}
         className="top-4 left-4  px-10 py-2 rounded"
         onClick={toggleSidebar}
       >
-        <VscThreeBars/>
+        <VscThreeBars />
       </button>
     </div>
   );

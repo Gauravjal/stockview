@@ -2,7 +2,7 @@
 const basePath = "https://finnhub.io/api/v1";
 export const searchSymbol = async (query) => {
   const url = `${basePath}/search?q=${query}&token=${process.env.REACT_APP_API_KEY}`;
-//   console.log(REACT_APP_API_KEY);
+  //   console.log(REACT_APP_API_KEY);
   const response = await fetch(url);
 
   if (!response.ok) {
