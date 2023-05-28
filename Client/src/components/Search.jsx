@@ -43,12 +43,12 @@ function Search({ isAuthenticated, logout, auth: { user } }) {
 
   return (
     <div className="w-full mx-auto place-content-center relative flex justify-center">
-      <div className="relative mx-auto">
+      <form className="relative mx-auto">
         <input
           type="text"
           value={input}
-          style={{ borderRadius: "5px 0 0 5px", border: "3px solid #76d18f" }}
-          className="shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          style={{}}
+          className="shadow  border rounded py-2 px-3 text-gray focus:outline-none focus:shadow-outline"
           placeholder="Search stock..."
           onChange={(event) => setInput(event.target.value)}
           onKeyPress={(event) => {
@@ -84,7 +84,7 @@ function Search({ isAuthenticated, logout, auth: { user } }) {
             setBestMatches={setBestMatches}
           />
         ) : null}
-      </div>
+      </form>
 
       {isAuthenticated && (
         <button

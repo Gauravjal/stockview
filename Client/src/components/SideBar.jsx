@@ -27,7 +27,7 @@ function SideBar() {
 
       <button
         style={{ color: "#76d18f" }}
-        className="top-4 left-4  px-10 py-2 rounded"
+        className="top-4   px-10 py-2 rounded"
         onClick={toggleSidebar}
       >
         <VscThreeBars />

@@ -20,7 +20,7 @@ function Dashboard({ auth: { isAuthenticated }, logout }) {
   return (
     <div className="w-full container ">
       {/* <div className="w-full bg-white nav row-span-1 flex justify-start items-center"> */}
-      <nav className="z-10 border-b-2 border-gray-500">
+      <nav style={{boxShadow:'0px 1px 5px #00000033'}} className="z-10 border-b-2">
         <div
           style={{ overflowX: "hidden" }}
           class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
