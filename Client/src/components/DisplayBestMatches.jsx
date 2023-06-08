@@ -4,6 +4,7 @@ function DisplayBestMatches({ bestMatches, setBestMatches }) {
   const { setStockSymbol } = useContext(StockContext);
   return (
     <ul className="absolute top-20 left-50 border-2 rounded-md overflow-y-scroll w-60 h-60 g-white border-neutral-200 custom-scrollbar z-50 bg-indigo-100">
+      {/* <ul className="absolute border-2 top-20 left-50 z-50 rounded-md bg-indigo-100 overflow-y-scroll  w-60 h-60 g-white custom-scrollbar"> */}
       {bestMatches.map((item) => {
         return (
           <li
@@ -14,6 +15,7 @@ function DisplayBestMatches({ bestMatches, setBestMatches }) {
             className="cursor-pointer p-4 m-2 flex items-center justify-between rounded-md hover:bg-indigo-200 transition duration-300"
             key={item.symbol}
           >
+            {console.log(item["1. symbol"])}
             <span>{item["1. symbol"]}</span>
             {/* <span>{item.description}</span> */}
           </li>

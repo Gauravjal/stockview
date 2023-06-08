@@ -20,10 +20,10 @@ function Dashboard({ auth: { isAuthenticated }, logout }) {
   return (
     <div className="w-full container ">
       {/* <div className="w-full bg-white nav row-span-1 flex justify-start items-center"> */}
-      <nav style={{boxShadow:'0px 1px 5px #00000033'}} className="z-10 border-b-2">
+      <nav style={{boxShadow:'0px 1px 5px #00000033'}} className="border-b-2">
         <div
-          style={{ overflowX: "hidden" }}
-          class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+          // style={{ overflowX: "hidden" }}
+          className=" max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
         >
           <div class="xl:w-screen md:w-screen lg:w-screen w-full flex items-center justify-between h-16">
             <div class="flex-shrink-0">

@@ -17,7 +17,8 @@ function Search({ isAuthenticated, logout, auth: { user } }) {
     setBestMatches([]);
   }
 
-  const updateBestMatches = async () => {
+  const updateBestMatches = async (e) => {
+    e.preventDefault();
     try {
       if (input) {
         // const searchResults = await searchSymbol(input);
@@ -48,12 +49,13 @@ function Search({ isAuthenticated, logout, auth: { user } }) {
           type="text"
           value={input}
           style={{}}
-          className="shadow  border rounded py-2 px-3 text-gray focus:outline-none focus:shadow-outline"
+          className="shadow border rounded py-2 px-3 text-gray focus:outline-none focus:shadow-outline"
           placeholder="Search stock..."
           onChange={(event) => setInput(event.target.value)}
           onKeyPress={(event) => {
             if (event.key === "Enter") {
-              updateBestMatches();
+              event.preventDefault();
+              updateBestMatches; // Corrected callback execution
             }
           }}
         />
@@ -68,6 +70,7 @@ function Search({ isAuthenticated, logout, auth: { user } }) {
           </button>
         )}
         <button
+          type="button"
           className="absolute top-3 right-3"
           style={{
             top: "50%",
@@ -78,7 +81,8 @@ function Search({ isAuthenticated, logout, auth: { user } }) {
         >
           <FaSearch style={{ color: "#76d18f" }} className="fill-current" />
         </button>
-        {input && bestMatches.length > 0 ? (
+
+        {input && bestMatches?.length > 0 ? (
           <DisplayBestMatches
             bestMatches={bestMatches}
             setBestMatches={setBestMatches}
