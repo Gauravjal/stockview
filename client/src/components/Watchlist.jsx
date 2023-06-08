@@ -10,7 +10,7 @@ import { AiOutlineStock } from "react-icons/ai";
 function Watchlist({ isAuthenticated, logout, auth: { user } }) {
   const { setStockSymbol } = useContext(StockContext);
   function stocksInWatchlist() {
-    return user.stocks.map((stock) => (
+    return user?.stocks?.map((stock) => (
       <div key={stock._id} className="container shadow py-2">
         <p>
           <b>{user.stocks[0].stockSymbol}</b>
