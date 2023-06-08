@@ -37,7 +37,7 @@ function Watchlist({ isAuthenticated, logout, auth: { user } }) {
 ) : (
   <div>
     {user &&
-      user.stocks.map((stock) => (
+      user.stocks?.map((stock) => (
         <div
           key={stock._id}
           className="border-b-2 cursor-pointer border-slate-900 p-3 m-2 flex items-center justify-between hover:bg-green-300 transition duration-300"
