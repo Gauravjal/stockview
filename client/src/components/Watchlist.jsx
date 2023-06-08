@@ -32,7 +32,7 @@ function Watchlist({ isAuthenticated, logout, auth: { user } }) {
             Watchlist
           </div>
 
-          {user && (user.stocks.length === 0 || !user.stocks) ? (
+          {user && (user.stocks?.length === 0) ? (
   <p>No stocks in the watchlist</p>
 ) : (
   <div>
