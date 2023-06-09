@@ -1,4 +1,4 @@
-Stock Dashboard App
+Stock Dashboard App    : https://stockview-xd42.onrender.com/
 -----------------------------------------------------------------------------------------------------
 
 This app is built in react js to view details of the stock like fundamentals and charts.etc.
@@ -16,6 +16,9 @@ Installation
 Prerequisites
 -----------------------------------------------------------------------------------------------------
 react js
+node
+express
+mongoDB
 
 How to run
 -----------------------------------------------------------------------------------------------------
