@@ -3,7 +3,6 @@ const express=require('express')
 const router=express.Router();
 //pull express validator
 const {check,validationResult}=require('express-validator');
-const config=require('config')
 const bcrypt=require('bcryptjs');
 //Import json web token
 const jwt=require('jsonwebtoken');
@@ -76,7 +75,7 @@ router.post('/'
 
     jwt.sign(
         payload,
-        config.get('jwtSecret'),
+        process.env.jwtSecret,
         { expiresIn: '5 days' },
         (err, token) => {
           if (err) throw err;
