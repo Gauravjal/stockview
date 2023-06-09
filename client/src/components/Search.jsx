@@ -43,7 +43,7 @@ function Search({ isAuthenticated, logout, auth: { user } }) {
   };
 
   return (
-    <div className="w-full mx-auto place-content-center relative flex justify-center">
+    <div className=" mx-auto place-content-center relative flex justify-center">
       <form className="relative mx-auto">
         <input
           type="text"
@@ -92,7 +92,7 @@ function Search({ isAuthenticated, logout, auth: { user } }) {
 
       {isAuthenticated && (
         <button
-          style={{ color: "#76d18f" }}
+          style={{ color: "#76d18f",border:'1px solid 76d18f' }}
           className="btn btn-sm rounded-md shadow ml-auto"
           onClick={logout}
         >
