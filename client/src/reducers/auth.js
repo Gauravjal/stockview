@@ -25,7 +25,7 @@ import {
           ...state,
           isAuthenticated: true,
           loading: false,
-          user: payload.user
+          user: payload
         };
       case REGISTER_SUCCESS:
         localStorage.setItem('token',payload.token);

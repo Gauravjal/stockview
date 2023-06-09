@@ -18,9 +18,10 @@ export const loadUser = () => async (dispatch) => {
 
   try {
     const res = await axios.get("https://stockview-xd42.onrender.com/api/auth");
+    console.log("check",res);
     dispatch({
       type: USER_LOADED,
-      payload: res.data,
+      payload: res.user,
     });
   } catch (err) {
     dispatch({
