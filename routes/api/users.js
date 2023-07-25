@@ -93,46 +93,46 @@ router.post('/'
 //@desc     Add stock
 //@access   private
 
-router.put('/stocks',[auth,[
-]],async(req,res)=>{
-    try{
-        // const errors=validationResult(req);
-        // if(!errors.isEmpty())
-        // {
-        //     return res.status(400).json({errors:errors.array()});
-        // }
-        const stockSymbol=req.body.stockSymbol;
-        const newStock={
-            stockSymbol
-        }
+router.put("/stocks", [auth, []], async (req, res) => {
+  try {
+    // const errors=validationResult(req);
+    // if(!errors.isEmpty())
+    // {
+    //     return res.status(400).json({errors:errors.array()});
+    // }
 
-        try{
-            // const user=await User.findOne({
-            //     user:req.user.id
-            // });
-            _id=req.user.id;
-            let user = await User.findOne({ _id });
-             console.log("new",newStock)
-            user.stocks.unshift(newStock);
-            await user.save();
-            res.json(user);
-        } catch(err){
-            console.error(err.message);
-            res.status(500).send();
-        }
-    }
-    catch(err){
-        if(err.kind=='ObjectId')
-        return res.status(400).json({
-            msg:'User not found'
-        });
-    
-        console.error(err.message);
-        res.status(500).send('Server Error');
-    }
-}
+    const stockSymbol = req.body.stockSymbol;
+    const newStock = {
+      stockSymbol,
+    };
 
-)
+    try {
+      _id = req.user.id;
+      let user = await User.findOne({ _id });
+      console.log("list", user.stocks);
+      if (user.stocks.some((stock) => stock.stockSymbol === stockSymbol)) {
+        // If the stock is found, remove it from the array
+        user.stocks = user.stocks.filter((stock) => stock.stockSymbol !== stockSymbol);
+      } else {
+        console.log("new", newStock);
+        user.stocks.unshift(newStock);
+      }
+      await user.save();
+      res.json(user);
+    } catch (err) {
+      console.error(err.message);
+      res.status(500).send();
+    }
+  } catch (err) {
+    if (err.kind == "ObjectId")
+      return res.status(400).json({
+        msg: "User not found",
+      });
+
+    console.error(err.message);
+    res.status(500).send("Server Error");
+  }
+});
 
 
 module.exports = router;
