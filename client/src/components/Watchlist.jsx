@@ -32,23 +32,23 @@ function Watchlist({ isAuthenticated, logout, auth: { user } }) {
             Watchlist
           </div>
 
-          {user && user.stocks.length === 0 && !user.stocks ? (
+          {user && user?.stocks?.length === 0 && !user?.stocks ? (
             <p>no stock in the watchlist</p>
           ) : (
             <div>
               
               {user &&
-                user.stocks.map((stock) => (
+                user?.stocks?.map((stock) => (
                   <div
-                    key={stock._id}
+                    key={stock?._id}
                     className="border-b-2 cursor-pointer border-slate-900 p-3 m-2 flex items-center justify-between hover:bg-green-300 transition duration-300"
                   >
                     <button
                       onClick={() => {
-                        setStockSymbol(stock.stockSymbol);
+                        setStockSymbol(stock?.stockSymbol);
                       }}
                     >
-                      <b>{stock.stockSymbol}</b>
+                      <b>{stock?.stockSymbol}</b>
                     </button>
                   </div>
                 ))}
