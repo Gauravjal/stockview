@@ -17,7 +17,7 @@ function Chart() {
   useEffect(() => {
     const fetchData = async () => {
       const kkeeyy = "SB9I4MIXG3D7OISQ";
-      let API_CALL = `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY_ADJUSTED&symbol=${stockSymbol}&outputsize=full&apikey=${kkeeyy}`;
+      let API_CALL = `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=${stockSymbol}&outputsize=full&apikey=${kkeeyy}`;
       console.log(API_CALL);
       await fetch(API_CALL)
         .then(function (response) {
