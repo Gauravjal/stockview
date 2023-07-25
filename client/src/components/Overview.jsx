@@ -1,15 +1,21 @@
 import React, { useState, useEffect, useContext } from "react";
-import { connect } from "react-redux";
+import { connect,useDispatch } from "react-redux";
 import axios from "axios";
 import PropTypes from "prop-types";
 // import { createClient }  from 'redis';
 import { FcBarChart } from "react-icons/fc";
+import { MdAdd } from "react-icons/md";
+import { MdRemove } from "react-icons/md";
 import StockContext from "./context/StockContext";
+import { useSelector } from "react-redux";
+import {loadUser} from "../actions/auth"
 function Overview({ auth: { user } }) {
+  const dispatch=useDispatch();
   const { stockSymbol } = useContext(StockContext);
   const [stockDetails, setStockDetails] = useState({});
   const [quote, setQuote] = useState([]);
-
+  const currentUser=useSelector((state)=>state.auth);
+  console.log(currentUser);
   useEffect(() => {
     const fetchData = async () => {
       const kkeeyy = "SB9I4MIXG3D7OISQ";
@@ -39,6 +45,7 @@ function Overview({ auth: { user } }) {
         // }
         { stockSymbol }
       );
+      dispatch(loadUser());
     } catch (error) {
       console.error(error);
     }
@@ -63,15 +70,28 @@ function Overview({ auth: { user } }) {
               quote["Global Quote"]["10. change percent"]}
           </h4>
         </button>
+        {
+          currentUser?.isAuthenticated && (
+            currentUser?.user?.stocks?.filter(stock=>stock.stockSymbol===stockSymbol).length>0 ?
         <button
           onClick={() => {
             addStock();
           }}
-          style={{padding: "5px" }}
-          className="mx-auto btn-success"
+          style={{ padding: "15px",borderRadius:'10px',backgroundColor: "red",color:'black',display:'flex' }}
+          className="mx-auto"
         >
-          Add to watchlist
+         <MdRemove style={{marginTop:'5px'}}/> Remove from Watchlist
         </button>
+        : <button
+        onClick={() => {
+          addStock();
+        }}
+        style={{ padding: "15px",borderRadius:'10px',backgroundColor: "#76d18f",color:'black',display:'flex' }}
+        className="mx-auto"
+      >
+       <MdAdd style={{marginTop:'5px'}}/> Add to watchlist
+      </button>)
+}
       </div>
       {/* <h3 className="flex"><FcBarChart className="my-auto"/>  {quote['Global Quote'] && quote['Global Quote']['06. volume']}</h3> */}
     </div>
