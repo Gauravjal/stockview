@@ -43,13 +43,12 @@ function Search({ isAuthenticated, logout, auth: { user } }) {
   };
 
   return (
-    <div className="w-full mx-auto place-content-center relative flex justify-center">
-      <form className="relative mx-auto">
+    <div className=" mx-auto relative flex justify-center">
+      <form className=" relative mx-auto">
         <input
           type="text"
           value={input}
-          style={{}}
-          className="shadow border rounded py-2 px-3 text-gray focus:outline-none focus:shadow-outline"
+          className="w-full shadow border  rounded py-2 px-3 text-gray focus:outline-none focus:shadow-outline"
           placeholder="Search stock..."
           onChange={(event) => setInput(event.target.value)}
           onKeyPress={(event) => {
@@ -91,13 +90,22 @@ function Search({ isAuthenticated, logout, auth: { user } }) {
       </form>
 
       {isAuthenticated && (
-        <button
-          style={{ color: "#76d18f" }}
-          className="btn btn-sm rounded-md shadow ml-auto"
-          onClick={logout}
+        <div
+          style={{ display: "flex", float: "right" }}
+          className="d-flex justify-content-end"
         >
-          <MdLogout />
-        </button>
+          <button
+            style={{
+              float: "right",
+              color: "#76d18f",
+              border: "1px solid #76d18f",
+            }}
+            className="btn btn-sm rounded-md shadow"
+            onClick={logout}
+          >
+            <MdLogout />
+          </button>
+        </div>
       )}
     </div>
   );

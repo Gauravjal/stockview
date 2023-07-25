@@ -17,7 +17,7 @@ export const loadUser = () => async (dispatch) => {
   }
 
   try {
-    const res = await axios.get("https://stockview-xd42.onrender.com/api/auth");
+    const res = await axios.get("http://localhost:5000/api/auth");
     dispatch({
       type: USER_LOADED,
       payload: res.data,
@@ -40,7 +40,7 @@ export const register = (username, email, password) => async (dispatch) => {
   try {
     console.log(body);
     const res = await axios.post(
-      "https://stockview-xd42.onrender.com/api/users",
+      "http://localhost:5000/api/users",
       username,
       config
     );
@@ -48,8 +48,9 @@ export const register = (username, email, password) => async (dispatch) => {
       type: REGISTER_SUCCESS,
       payload: res.data,
     });
-    dispatch(setAlert("Registration successful", "success"));
     dispatch(loadUser());
+    dispatch(setAlert("Registration successful", "success"));
+    
   } catch (err) {
     if (err.response && err.response.data) {
       // handle error response
@@ -80,7 +81,7 @@ export const login = (email, password) => async (dispatch) => {
   try {
     console.log(body);
     const res = await axios.post(
-      "https://stockview-xd42.onrender.com/api/auth",
+      "http://localhost:5000/api/auth",
       body,
       config
     );

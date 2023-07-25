@@ -19,16 +19,14 @@ function Dashboard({ auth: { isAuthenticated }, logout }) {
   const [toDisplay, setToDisplay] = useState("Chart");
   return (
     <div className="w-full container ">
-      {/* <div className="w-full bg-white nav row-span-1 flex justify-start items-center"> */}
-      <nav style={{boxShadow:'0px 1px 5px #00000033'}} className="border-b-2">
-        <div
-          // style={{ overflowX: "hidden" }}
-          className=" max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
-        >
+      <nav
+        style={{ boxShadow: "0px 1px 5px #00000033" }}
+        className="border-b-2"
+      >
+        <div className=" max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="xl:w-screen md:w-screen lg:w-screen w-full flex items-center justify-between h-16">
             <div class="flex-shrink-0">
               <a href="#" class="flex items-center">
-                {/* <link rel="icon" href="%PUBLIC_URL%/trend.png" /> */}
                 <img class="h-8 w-8" src="/trend.png" alt="Logo"></img>
                 <span
                   style={{ color: "#76d18f" }}
@@ -48,8 +46,6 @@ function Dashboard({ auth: { isAuthenticated }, logout }) {
 
       <div className="">
         <div className="">
-          {/* <Card className="md:col-span-2 row-span-4" child="stock"/> */}
-          {/* {data[1]?<Chart data={data}/> : <h1 className="text-center">Loading Chart...</h1>} */}
           <h1 className="text-blue-500 text-center py-3">{stockSymbol}</h1>
           <div className="bg-white xl:py-0">
             <Overview />
@@ -98,10 +94,6 @@ function Dashboard({ auth: { isAuthenticated }, logout }) {
             {/* <News/> */}
           </div>
           <br></br>
-
-          {/* <div className="py-60 md:py-40 xl:py-20">
-            <Details details={mockCompanyDetails}/>
-        </div> */}
         </div>
       </div>
     </div>

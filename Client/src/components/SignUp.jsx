@@ -62,7 +62,7 @@ const SignUp = ({ setAlert, register, isAuthenticated }) => {
       }
     }
 
-    if (isAuthenticated) handlePersonalClose();
+    //if (isAuthenticated) handlePersonalClose();
     // try{
     //   const config={
     //     headers:{

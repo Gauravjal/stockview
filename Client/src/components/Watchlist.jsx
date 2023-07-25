@@ -36,6 +36,7 @@ function Watchlist({ isAuthenticated, logout, auth: { user } }) {
             <p>no stock in the watchlist</p>
           ) : (
             <div>
+              
               {user &&
                 user.stocks.map((stock) => (
                   <div
