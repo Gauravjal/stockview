@@ -39,7 +39,7 @@ function Overview({ auth: { user } }) {
     try {
       // const res = await axios.put('http://localhost:5000/api/profile/education', formData);
       await axios.put(
-        `http://localhost:5000/api/users/stocks`,
+        `https://stockview-xd42.onrender.com/api/users/stocks`,
         // {
         //   method: 'PUT',
         // }
