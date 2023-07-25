@@ -17,7 +17,7 @@ export const loadUser = () => async (dispatch) => {
   }
 
   try {
-    const res = await axios.get("http://localhost:5000/api/auth");
+    const res = await axios.get("https://stockview-xd42.onrender.com/api/auth");
     dispatch({
       type: USER_LOADED,
       payload: res.data,
@@ -40,7 +40,7 @@ export const register = (username, email, password) => async (dispatch) => {
   try {
     console.log(body);
     const res = await axios.post(
-      "http://localhost:5000/api/users",
+      "https://stockview-xd42.onrender.com/api/users",
       username,
       config
     );
@@ -81,7 +81,7 @@ export const login = (email, password) => async (dispatch) => {
   try {
     console.log(body);
     const res = await axios.post(
-      "http://localhost:5000/api/auth",
+      "https://stockview-xd42.onrender.com/api/auth",
       body,
       config
     );
