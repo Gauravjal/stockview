@@ -1,6 +1,5 @@
 
-# StockView
-
+# StockView:- https://stockview-xd42.onrender.com
 ------------------------------------------------------------------------------
 Welcome to the Stock Dashboard project, built using the MERN (MongoDB, Express.js, React.js, Node.js) stack. This dashboard provides real-time stock market data and analysis tools, allowing users to make informed investment decisions.
 
@@ -24,7 +23,7 @@ Clone the repository:
 
 bash
 Copy code
-git clone https://github.com/your-username/stock-dashboard.git
+git clone https://github.com/Gauravjal/stockview.git
 cd stock-dashboard
 Install dependencies for the frontend and backend:
 
