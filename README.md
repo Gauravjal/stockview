@@ -5,6 +5,7 @@ Welcome to the Stock Dashboard project, built using the MERN (MongoDB, Express.j
 
 ------------------------------------------------------------------------------
 Features
+
 Real-time Data: Get up-to-the-minute stock market data from various sources.
 User Authentication: Secure user authentication and authorization system.
 Interactive Charts: Visualize stock data through interactive and dynamic charts.
@@ -13,12 +14,14 @@ News Integration: Stay updated with the latest market news related to your inves
 Responsive Design: Accessible and usable across devices of all sizes.
 ------------------------------------------------------------------------------
 Technologies Used
+
 Frontend: React.js, Redux, Apex Charts, Tailwind CSS
 Backend: Node.js, Express.js, MongoDB
 Authentication: JSON Web Tokens (JWT)
 API Integration: External APIs for real-time stock data and news
 ------------------------------------------------------------------------------
 Installation
+
 Clone the repository:
 
 bash
